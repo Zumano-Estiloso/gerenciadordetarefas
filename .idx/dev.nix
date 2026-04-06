@@ -7,6 +7,9 @@
   packages = [
     pkgs.nodejs_22
     pkgs.python3
+    pkgs.share-preview
+    pkgs.htmltest
+    pkgs.vsce
   ];
   # Sets environment variables in the workspace
   env = {};
