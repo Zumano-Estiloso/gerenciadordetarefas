@@ -1,1 +1,61 @@
-/* Add styles here */
+:root {
+    --main-bg-color: #1a1a1a;
+    --column-bg-color: #2a2a2a;
+    --card-bg-color: #3a3a3a;
+    --text-color: #f0f0f0;
+    --accent-color: #00aaff;
+    --card-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%),
+                      linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%),
+                      linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.02) 75%),
+                      linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.02) 75%);
+    background-size: 20px 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--column-bg-color);
+    border-bottom: 1px solid var(--accent-color);
+}
+
+#add-task-btn {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add-task-btn:hover {
+    background-color: #0088cc;
+}
+
+#task-board {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+task-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+task-card {
+    display: block;
+    margin-bottom: 0.5rem;
+}

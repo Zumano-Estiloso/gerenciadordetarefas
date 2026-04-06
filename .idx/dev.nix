@@ -15,6 +15,9 @@
     extensions = [
       # "vscodevim.vim"
       "google.gemini-cli-vscode-ide-companion"
+      "formulahendry.auto-close-tag@0.5.15"
+      "Dart-Code.flutter@3.133.20260331"
+      "formulahendry.code-runner@0.12.2"
     ];
     # Enable previews and customize configuration
     previews = {
