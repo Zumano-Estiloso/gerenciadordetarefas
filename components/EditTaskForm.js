@@ -8,6 +8,7 @@ class EditTaskForm extends HTMLElement {
     connectedCallback() {
         this.render();
         this.shadowRoot.querySelector('#close-btn').addEventListener('click', () => this.close());
+        this.shadowRoot.querySelector('#delete-btn').addEventListener('click', () => this.handleDelete());
         this.shadowRoot.querySelector('form').addEventListener('submit', (e) => {
             e.preventDefault();
             this.handleSubmit();
@@ -50,6 +51,9 @@ class EditTaskForm extends HTMLElement {
                     border-radius: 5px;
                     cursor: pointer;
                 }
+                #delete-btn {
+                    background-color: #ff4d4d;
+                }
             </style>
             <div class="modal-overlay">
                 <div class="modal-content">
@@ -65,6 +69,7 @@ class EditTaskForm extends HTMLElement {
                             <option value="done">Concluído</option>
                         </select>
                         <button type="submit">Salvar</button>
+                        <button type="button" id="delete-btn">Remover</button>
                         <button type="button" id="close-btn">Fechar</button>
                     </form>
                 </div>
@@ -92,6 +97,13 @@ class EditTaskForm extends HTMLElement {
             detail: { taskId: this.task.id, title, description, assignee, dueDate, status }
         }));
 
+        this.close();
+    }
+
+    handleDelete() {
+        this.dispatchEvent(new CustomEvent('taskDeleted', {
+            detail: { taskId: this.task.id }
+        }));
         this.close();
     }
 

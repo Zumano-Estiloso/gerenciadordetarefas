@@ -76,7 +76,15 @@ class CreateTaskForm extends HTMLElement {
             detail: { title, description, assignee, dueDate }
         }));
 
+        this.resetForm();
         this.close();
+    }
+
+    resetForm() {
+        this.shadowRoot.querySelector('#task-title').value = '';
+        this.shadowRoot.querySelector('#task-description').value = '';
+        this.shadowRoot.querySelector('#task-assignee').value = '';
+        this.shadowRoot.querySelector('#task-due-date').value = '';
     }
 
     open() {

@@ -77,4 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Re-render the card to reflect changes
         taskCard.render();
     });
+
+    editTaskForm.addEventListener('taskDeleted', (e) => {
+        const { taskId } = e.detail;
+        const taskCard = document.getElementById(taskId);
+        if (taskCard) {
+            taskCard.remove();
+            taskCount--;
+        }
+    });
 });
